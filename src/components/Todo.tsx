@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Input } from "antd";
 import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import Popup from "./Popup";
+import Timer from "./Timer";
 
 interface TodoProps {
     onDelete: (id: string) => void;
@@ -33,6 +34,7 @@ const Todo: React.FC<TodoProps> = ({ onDelete, id, task, updateTask }) => {
                     value={task}
                     onChange={handleChange}
                 />
+                <Timer />
                 <Button onClick={() => setShow(true)}>Start</Button>
                 <Button onClick={() => handleDone()}>
                     {done ? "Undo" : "Done"}
